@@ -5,24 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/scss/style.css">
-    <link rel="icon" href="Jankenpon.png" />
+    <link rel="icon" href="./assets/jankenpon-icon.png" />
     <title>JanKenPon</title>
 </head>
-<body class="bg-dark">
+<body class="bg-dark" onload="fetchGameStatus()">
     <div class="text-center container mb-4">
         <img src="./assets/jankenpon.png" class="img-fluid" width="230" height="100" alt="JanKenPon">
     </div>
     <div class="container card">
         <div class="card-body">
-            <div class="row mt-5
-            ">
+            <div class="row mt-5">
                 <div class="col" id="mainCharacter">
                     <h4 class="card-title text-center">The Main Character</h4>
                     <div class="d-flex justify-content-center"><img src="./assets/hand-rock.png" id="mainCharacterStance" class="img-fluid img-flip" width="250" alt="MC Hand Stance"></div>
                 </div>
                 <div class="col" id="roundResult">
                     <h4 class="card-title d-flex justify-content-center">Result</h4>
-                    <h1 class="d-flex justify-content-center mt-10"><p class="text-success">0</p><p>-</p><p class="text-danger">0</p></p></h1>
+                    <h1 class="d-flex justify-content-center mt-10"><p class="text-success mx-2" id="mcScore">0</p><p>-</p><p class="text-danger mx-2" id="anScore">0</p></p></h1>
+                    <h1 class="d-flex justify-content-center mt-10 text-primary" id="scoreStatus"></h1>
                 </div>
                 <div class="col" id="archNemesis">
                     <h4 class="card-text text-center">Your Arch-Nemesis</h4>
@@ -30,12 +30,16 @@
                 </div>    
             </div>
             <div class="container text-center mb-4">
-                <h5 class="mb-5 mt-10">Select your hand's stand</h5>
+                <h5 class="mb-5">Select your hand's stand</h5>
                 <a href="#" id="handStandRock" class="btn btn-primary w-10 p-3 mx-2">Rock</a>
                 <a href="#" id="handStandPaper" class="btn btn-primary w-10 p-3 mx-2">Paper</a>
                 <a href="#" id="handStandScissors" class="btn btn-primary w-10 p-3 mx-2">Scissors</a>
             </div>
+            <div>
+                <a href="#" id="handStandReset" class="btn btn-danger text-align-right w-10 p-3 mx-2">Reset</a>
+            </div>
         </div>
     </div>
+    <script src="./src/app.js"></script>
 </body>
 </html>
